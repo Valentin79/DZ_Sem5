@@ -13,8 +13,7 @@ int[] FillArray(int length)
 
 void PrintArray(int[] arr)
 {
-    int count = arr.Length;
-    for(int i = 0; i < count; i++)
+    for(int i = 0; i < arr.Length; i++)
     {
         Console.Write($"{arr[i]}, ");
     }
@@ -25,8 +24,7 @@ void PrintSumNeg(int[] arr)
 {
     Console.Write("Отрицательные числа: ");
     int sum = 0;
-    int count = arr.Length;
-    for(int i=0; i<count; i++)
+    for(int i=0; i<arr.Length; i++)
     {
         if(arr[i]%2 != 0) 
         {
