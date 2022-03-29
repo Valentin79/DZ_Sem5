@@ -1,37 +1,38 @@
 ﻿// Задайте массив вещественных чисел. 
 // Найдите разницу между максимальным и минимальным элементов массива.
 
-int[] FillArray(int length)
+double[] FillArray(int length)
 {
-    int[] arr = new int[length];
+    Random rand = new Random();
+    double[] arr = new double[length];
     for(int i = 0; i < arr.Length; i++)
     {
-        arr[i] = new Random().Next(1, 100);
+        arr[i] = rand.NextDouble()*100;
     }
     return arr;
 }
 
-void PrintArray(int[] arr)
+void PrintArray(double[] arr)
 {
     for(int i = 0; i < arr.Length; i++)
     {
-        Console.Write($"{arr[i]}, ");
+        Console.Write($"{arr[i].ToString("0.000")}, ");
     }
     Console.WriteLine();
 }
 
-void MinMaxRezult(int[] arr)
+void MinMaxRezult(double[] arr)
 {
-    int min = arr[0];
-    int max = arr[0];
+    double min = arr[0];
+    double max = arr[0];
     for(int i=0; i<arr.Length; i++)
     {
         if(arr[i] <= min) min = arr[i];
         if(arr[i] >= max) max = arr[i];
     }
-    Console.Write($"min = {min}, max = {max} Разница: {max} - {min} = {max - min}");
+    Console.Write($"min = {min.ToString("0.000")}, max = {max.ToString("0.000")} Разница: {max.ToString("0.000")} - {min.ToString("0.000")} = {(max - min).ToString("0.000")}");
 }
 
-int[] array = FillArray(10);
+double[] array = FillArray(10);
 PrintArray(array);
 MinMaxRezult(array);
